@@ -4,7 +4,7 @@ import pandas as pd
 def test_upsample_sentence():
     upsampler = EDA_Upsampler()
 
-    x_train = pd.read_csv('./datasets/spotify/spotify_10_train_unaugmented.csv')
+    x_train = pd.read_csv('../datasets/spotify/spotify_10_train_unaugmented.csv')
     x_train = x_train['text']
     
     modified_lyrics = upsampler._upsample_sentence(x_train.iloc[3], 2)
@@ -14,7 +14,7 @@ def test_upsample_sentence():
 def test_upsample_sentence2():
     upsampler = EDA_Upsampler()
 
-    x_train = pd.read_csv('./datasets/linkedin/linkedin_train.csv')
+    x_train = pd.read_csv('../datasets/linkedin/linkedin_train.csv')
     x_train = x_train['description']
     
     modified_lyrics = upsampler._upsample_sentence(x_train.iloc[3], 3)
@@ -24,7 +24,7 @@ def test_upsample_sentence2():
 def test_upsample_dataset():
     upsampler = EDA_Upsampler()
     # Load datasets
-    train = pd.read_csv('./datasets/spotify/spotify_10_train_unaugmented.csv')
+    train = pd.read_csv('../datasets/spotify/spotify_10_train_unaugmented.csv')
 
     train = train.loc[train['label'].isin([0,1,2])].reset_index(drop=True)
 
@@ -55,7 +55,7 @@ def test_upsample_dataset():
 
 
     # Save DataFrames to CSV files
-    df_train.to_csv('./datasets/spotify/classical/test_spotify_classical_train.csv', index=False) 
+    df_train.to_csv('../datasets/spotify/classical/test_spotify_classical_train.csv', index=False) 
 
 
 test_upsample_sentence()

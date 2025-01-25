@@ -3,13 +3,13 @@ import torch
 
 class Linkedin_Data_Reader():
     def __init__(self):
-        self.test = pd.read_csv('./datasets/linkedin/linkedin_test.csv')
-        self.val = pd.read_csv('./datasets/linkedin/linkedin_val.csv')
+        self.test = pd.read_csv('../datasets/linkedin/linkedin_test.csv')
+        self.val = pd.read_csv('../datasets/linkedin/linkedin_val.csv')
 
-        self.train = pd.read_csv('./datasets/linkedin/linkedin_train.csv')
-        self.train_backtrans = pd.read_csv('./datasets/linkedin/backtrans/linkedin_train_backtranslated_augmented.csv')
-        self.train_llm = pd.read_csv('./datasets/linkedin/llm/linkedin_train_llm_augmented.csv')
-        self.train_classical = pd.read_csv('./datasets/linkedin/classical/linkedin_classical_train.csv')
+        self.train = pd.read_csv('../datasets/linkedin/linkedin_train.csv')
+        self.train_backtrans = pd.read_csv('../datasets/linkedin/backtrans/linkedin_train_backtranslated_augmented.csv')
+        self.train_llm = pd.read_csv('../datasets/linkedin/llm/linkedin_train_llm_augmented.csv')
+        self.train_classical = pd.read_csv('../datasets/linkedin/classical/linkedin_classical_train.csv')
 
         titles = self.train['title'].unique()
         title_to_idx = {title: idx for idx, title in enumerate(titles)}
@@ -74,12 +74,12 @@ class Linkedin_Data_Reader():
 
 class Spotify_Data_Reader():
     def __init__(self):
-        self.train = pd.read_csv('./datasets/spotify/spotify_10_train_unaugmented.csv')
-        self.train_backtrans = pd.read_csv('./datasets/spotify/backtrans/spotify_10_train_augmented.csv')
-        self.train_classical = pd.read_csv('./datasets/spotify/classical/spotify_classical_train.csv')
-        self.train_llm = pd.read_csv('./datasets/spotify/llm/spotify_10_train_llm_augmented.csv')
-        self.test = pd.read_csv('./datasets/spotify/spotify_10_test.csv')
-        self.val = pd.read_csv('./datasets/spotify/spotify_10_val.csv')
+        self.train = pd.read_csv('../datasets/spotify/spotify_10_train_unaugmented.csv')
+        self.train_backtrans = pd.read_csv('../datasets/spotify/backtrans/spotify_10_train_augmented.csv')
+        self.train_classical = pd.read_csv('../datasets/spotify/classical/spotify_classical_train.csv')
+        self.train_llm = pd.read_csv('../datasets/spotify/llm/spotify_10_train_llm_augmented.csv')
+        self.test = pd.read_csv('../datasets/spotify/spotify_10_test.csv')
+        self.val = pd.read_csv('../datasets/spotify/spotify_10_val.csv')
 
     def read_training(self):
         x_train = self.train['text'].tolist()

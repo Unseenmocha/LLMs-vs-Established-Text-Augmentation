@@ -1,6 +1,3 @@
-import sys
-import os
-
 from DatasetUpsampler import DatasetUpsampler
 import numpy as np
 import re
@@ -80,7 +77,7 @@ class EDA_Upsampler(DatasetUpsampler):
 def upsample_spotify():
     upsampler = EDA_Upsampler()
 
-    train = pd.read_csv('./datasets/spotify/spotify_10_train_unaugmented.csv')
+    train = pd.read_csv('../datasets/spotify/spotify_10_train_unaugmented.csv')
 
      # Convert to lists
     x_train_spotify = train['text'].tolist()
@@ -104,7 +101,7 @@ def upsample_spotify():
 def upsample_linkedin():
     upsampler = EDA_Upsampler()
     # Load datasets
-    linkedin_data = pd.read_csv('./datasets/linkedin/linkedin_train.csv')
+    linkedin_data = pd.read_csv('../datasets/linkedin/linkedin_train.csv')
     # titles = linkedin_data['title'].drop_duplicates().reset_index(drop=True)
 
 
@@ -127,7 +124,7 @@ def upsample_linkedin():
     print('\n\n************************************************************************************\n\n')
     print(df_train)
 
-    df_train.to_csv('./datasets/linkedin/classical/linkedin_classical_train.csv', index=False)  
+    df_train.to_csv('../datasets/linkedin/classical/linkedin_classical_train.csv', index=False)  
 
 
 # test_upsample_dataset()
